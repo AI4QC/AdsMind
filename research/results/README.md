@@ -116,11 +116,9 @@ PYTHONPATH=. .venv/bin/python research/analysis/build_ocd62_summary.py
 
 Raw structural evidence (per-run `artifacts/` and relaxation `traj/`
 directories, `.xyz`/`.traj`/`.pkl` payloads, plots, and raw agent/driver logs)
-is NOT committed here. It is distributed as a GitHub release archive; see
-[paper-artifacts/MANIFEST.md](../../paper-artifacts/MANIFEST.md). Absolute-path
-fields inside committed records such as `result.json` are normalized to
-repository-relative paths, so entries that point into `artifacts/` refer to
-files inside the release archive rather than the clone. Each run keeps a
+is not committed here. Absolute-path fields inside committed records such as
+`result.json` are normalized to repository-relative paths; entries pointing
+into `artifacts/` refer to files not included in the repository. Each run keeps a
 sanitized `run_config.public.json` sidecar that preserves reproducibility fields
 such as `git_sha`, `frozen_config`, and runtime flags while redacting
 credential-source fields, omitting non-scientific transport notes, and

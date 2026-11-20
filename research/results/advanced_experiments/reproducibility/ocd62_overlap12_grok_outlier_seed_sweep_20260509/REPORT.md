@@ -1,10 +1,8 @@
 # Grok-4 outlier follow-up sweep — 2026-05-09
 
-Triggered by advisor's data audit (chat 2, 2026-05-09): after the run5 rerun, two
-to three Grok-4 cases still flagged as outliers in the OCD62 overlap12 N=5
-reproducibility table, plus the standing CMU20 case 20 one_shot anomaly. Advisor
-asked to try another random seed; if no luck, accept the result and add a
-"Grok-4 limitations" paragraph in the paper.
+After the run5 rerun, two to three Grok-4 cases remained flagged as outliers in
+the OCD62 overlap12 N=5 reproducibility table, along with the CMU20 case 20
+one_shot anomaly. This sweep investigates their sensitivity to random seeds.
 
 This report covers a 25-run seed sweep (5 targets × 5 seeds, seeds 100, 200,
 300, 400, 500, max_tokens=2000, temperature=0, MACE-MP-0 small / CPU /
@@ -51,7 +49,7 @@ sid=735 c011 full seed 400, sid=735 c011 single_shot seed 100). All three
 (60/180/300 s), and **all three succeeded on the first retry attempt** — the
 original errors were transient OpenRouter routing failures, not credit issues.
 After retry the OCD62 sweep is **5/5 successful** for every target and matches
-the advisor's "complete N=5" requirement; only the two case-006 dissociation
+the N=5 target; only the two case-006 dissociation
 failures and the one CMU20 case-20 dissociation failure remain, and those
 represent real adsorbate physics, not infrastructure noise.
 
@@ -231,11 +229,10 @@ Initial pass dispositions (25 runs):
 | sid=735 c011 single_shot | 0 | 1 (seed 100, 500) | 4 |
 | **subtotal** | **3** | **3** | **19** |
 
-The 3 OpenRouter 5xx errors were all transient (no credit issue: ~$15 of the
-$17.4 starting balance still available). A retry wrapper with exponential
+The 3 OpenRouter 5xx errors were transient. A retry wrapper with exponential
 backoff (60/180/300 s waits) was added to the script; **all 3 retries
 succeeded on the first reattempt**. After retry, the OCD62 sweep is **5/5 for
-every target** and matches the advisor's "complete N=5" requirement. The
+every target** and matches the N=5 target. The
 remaining 3 dissociation outcomes are physical and persist across reseeds.
 
 ## Discussion: what reseed actually fixes
@@ -265,8 +262,7 @@ configuration. **Reseed *partially* helps** here: a different conformer tree
 can land the agent at a different initial site that does not induce
 dissociation. For sid=362 the new sweep finds a clean molecular site at
 −9.14 eV for 3 of 5 new seeds while 2 still dissociate, which is exactly
-this mechanism in action — the advisor's instruction "再换个种子看看" did
-work, just not 100% of the time. The molecular −9.14 eV value is now a usable
+illustrating that reseeding helped in some runs but not all. The molecular −9.14 eV value is now a usable
 single_shot reference for this case; the AdsMind Full variant, which retries
 under FORBID after a dissociation event, recovers it deterministically.
 
@@ -280,13 +276,13 @@ proposes a slightly suboptimal initial site for this complex intermetallic
 case, and one_shot has no chance to refine. Reseed does *not* fix this
 because the bias is in how Grok ranks candidate sites at temperature 0, not
 in the conformer sampling. **This is the case that justifies the "Grok-4
-limitations" SI paragraph the advisor proposed.**
+limitations" SI paragraph.**
 
 The practical instruction "try a different seed" is therefore correct for
 (A) and (B), and identifies (C) by elimination after a small seed sweep
 exhausts.
 
-## Recommended actions (for advisor decision)
+## Interpretation and follow-up
 
 1. **Patch the audit table** to reclassify case 006 single_shot Grok runs 1–4
    as dissociated. Treat −9.14 eV as the molecular reference. This follows the
@@ -298,7 +294,7 @@ exhausts.
    manuscript. Random-seed exploration (10 seeds) consistently fails to
    reproduce the −11.65 eV one-shot answer that other backends find. This is
    the strongest single piece of evidence for the "Grok-4 limitations"
-   paragraph the advisor proposed.
+   paragraph.
 4. **sid=201 case 005 and sid=735 case 011 single_shot bimodality** can be
    reported as agent site-choice variance under single_shot; they do not need
    reseeding further.

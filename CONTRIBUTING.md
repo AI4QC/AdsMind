@@ -30,8 +30,7 @@ python -m unittest discover -s tests -p 'test_*.py' -v
   relaxation settings, seeds, and benchmark manifests.
 - Do not commit API keys, provider credentials, private workstation paths, raw
   logs, or local recovery notes.
-- Put large generated artifacts in release archives instead of normal Git
-  history. See `paper-artifacts/MANIFEST.md`.
+- Avoid committing large generated artifacts to normal Git history.
 
 ## Data and Results Policy
 

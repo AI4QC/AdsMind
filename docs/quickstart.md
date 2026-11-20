@@ -60,7 +60,7 @@ export HF_MODEL=Qwen/Qwen3-8B
 adsmind \
   --smiles O \
   --slab_path datasets/samples/cu_slab_211.xyz \
-  --user_request "Find a stable oxygen adsorption configuration."
+  --user_request "Find a stable water adsorption configuration."
 ```
 
 Useful options:
@@ -94,8 +94,7 @@ Each run writes to `outputs/<session-id>/`. Typical artifacts include:
 - `best_configuration.png`: rendered best structure, when rendering succeeds,
 - generated `.xyz`/`.traj` files used during relaxation.
 
-Runtime outputs are ignored by Git. Promote only curated, documented artifacts
-into release archives.
+Runtime outputs are ignored by Git. Commit only curated, documented results.
 
 ## Common Issues
 

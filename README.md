@@ -1,6 +1,6 @@
 # AdsMind
 
-[![CI](https://github.com/NagatoBigSeven/AdsMind/actions/workflows/ci.yml/badge.svg)](https://github.com/NagatoBigSeven/AdsMind/actions/workflows/ci.yml)
+[![CI](https://github.com/AI4QC/AdsMind/actions/workflows/ci.yml/badge.svg)](https://github.com/AI4QC/AdsMind/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 AdsMind is the codebase for the manuscript "AdsMind: A Physics-Grounded
@@ -68,7 +68,7 @@ Run the CLI on a bundled sample slab:
 adsmind \
   --smiles O \
   --slab_path datasets/samples/cu_slab_211.xyz \
-  --user_request "Find a stable oxygen adsorption configuration."
+  --user_request "Find a stable water adsorption configuration."
 ```
 
 Launch the Streamlit UI:
@@ -102,13 +102,9 @@ outputs live under `research/results/`; start with
 [research/results/README.md](research/results/README.md) before using those
 CSV/JSON/TEX files.
 
-Large raw run payloads (trajectories, per-run artifacts, agent/driver logs) will
-be distributed as a GitHub release archive (not yet published; available from
-the sole first author on request in the meantime) rather than committed
-directly, so a clone stays small. The committed result tree keeps only path-sanitized summaries
-and per-case records. See
-[paper-artifacts/MANIFEST.md](paper-artifacts/MANIFEST.md) for the artifact
-archive layout.
+Large raw run payloads (trajectories, per-run artifacts, agent/driver logs) are
+not included in the repository. The committed result tree contains
+path-sanitized summaries and per-case records.
 
 ## Citation
 

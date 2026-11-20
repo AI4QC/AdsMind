@@ -73,10 +73,10 @@ adsmind-preflight = "adsmind.utils.preflight:main"
 adsmind-ui = "adsmind.app.launcher:main"
 
 [project.urls]
-Homepage = "https://github.com/NagatoBigSeven/AdsMind"
-Repository = "https://github.com/NagatoBigSeven/AdsMind"
-Issues = "https://github.com/NagatoBigSeven/AdsMind/issues"
-Documentation = "https://github.com/NagatoBigSeven/AdsMind#readme"
+Homepage = "https://github.com/AI4QC/AdsMind"
+Repository = "https://github.com/AI4QC/AdsMind"
+Issues = "https://github.com/AI4QC/AdsMind/issues"
+Documentation = "https://github.com/AI4QC/AdsMind#readme"
 
 [tool.setuptools.packages.find]
 include = ["adsmind", "adsmind.*"]

@@ -399,7 +399,7 @@ def write_readme(manifest_rows: list[dict[str, str]], selected_count: int) -> No
             [
                 "# Panel B Structure Assets 2026-04-29",
                 "",
-                "Purpose: visual素材包 for the dataset/coverage panel.",
+                "Purpose: visual assets for the dataset/coverage panel.",
                 "",
                 "Source convention:",
                 "",
