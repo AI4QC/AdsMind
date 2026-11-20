@@ -3,9 +3,7 @@
 # Verify from the repository root with:
 #     shasum -a 256 -c paper-artifacts/checksums.txt
 #
-# Raw run payloads (trajectories, per-run artifacts, agent/driver logs) ship in
-# the release archive (see MANIFEST.md); their checksums will be appended to this
-# file when that archive is built.
+# Raw run payloads are not included in this checksum list.
 
 0902835ef3a6085686337d605d39df63ffb21b6af8559793888bf1e5d8380e12  datasets/cmu20/cmu20_manifest.csv
 fe144198fe1bc1ab193a51cdc890059699eda377daa2b44af00e4ac1ee0df0ac  datasets/ocd62/ocd62_manifest.csv

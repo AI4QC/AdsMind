@@ -1,7 +1,7 @@
 # AdsMind paper artifacts — v0.1.0 (DRAFT)
 
-Release notes for the artifact archive accompanying the AdsMind preprint
-(arXiv:2606.19152). **Draft**: finalize and attach the archive zip when ready.
+Draft provenance and data index for the AdsMind preprint (arXiv:2606.19152).
+Verify the details against the release commit before publication.
 
 ## Provenance
 
@@ -17,16 +17,15 @@ Release notes for the artifact archive accompanying the AdsMind preprint
 | LLM backends (temperature 0) | Gemini-2.5-Pro, GPT-5.4, Claude-Sonnet-4.6, Grok-4 |
 | Credentials | none included — API keys / provider credentials are excluded |
 
-## What is committed vs. archived
+## Repository contents
 
-- **Committed in the repository** (sufficient to reproduce every reported
-  number): benchmark manifests (`datasets/`), frozen run configurations
+- **Committed in the repository** (inputs and summaries for reproducing
+  reported numbers; completeness and reproducibility require verification): benchmark manifests (`datasets/`), frozen run configurations
   (`research/agent_eval/configs/`), reproduction scripts
   (`research/agent_eval/`, `research/analysis/`), and path-sanitized summaries /
   per-case records (`research/results/`).
-- **In this archive** (excluded from the clone to keep it small): raw relaxation
-  trajectories, full per-run artifacts, agent/driver logs, and high-resolution
-  figure sources.
+- Raw relaxation trajectories, full per-run artifacts, and agent/driver logs
+  are not included in the repository.
 
 ## Which files back each paper element
 
@@ -45,19 +44,5 @@ Release notes for the artifact archive accompanying the AdsMind preprint
 
 SHA-256 checksums for the committed promoted inputs (manifests + headline
 summary tables) are in [`checksums.txt`](checksums.txt); verify with
-`shasum -a 256 -c paper-artifacts/checksums.txt` from the repository root. Append
-the archive-payload checksums to that file when the zip is built.
+`shasum -a 256 -c paper-artifacts/checksums.txt` from the repository root.
 
-## Archive layout (to assemble)
-
-```text
-adsmind-paper-artifacts-v0.1.0/
-  README.md            # this provenance summary
-  checksums.txt        # extended with raw-payload hashes
-  results/
-    basic_experiments/     # cmu20 + ocd62 AdsMind/baseline summaries (mirrors research/results/)
-    advanced_experiments/  # ablation+slip, force-field sensitivity, reproducibility, case studies
-  trajectories/        # raw relaxation trajectories (not in the clone)
-  figures/             # high-resolution figure sources
-  provenance/          # frozen configs, environment lock, run logs
-```

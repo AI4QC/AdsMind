@@ -142,7 +142,7 @@ def regenerate_dft_validation() -> None:
     ax.grid(False, axis="x")
     ax.set_axisbelow(True)
 
-    ref_dir = ROOT / "research/paper_plots/figure5/reference"
+    ref_dir = ROOT / "research/paper_plots/figure2/reference"
     ref_images = [
         "01_Mo3Pd_111_H_template_v6.png",
         "02_Mo3Pd_111_NNH.png",
@@ -181,8 +181,7 @@ def regenerate_dft_validation() -> None:
     save_all(
         fig,
         [
-            ROOT / "research/paper_plots/figure5/figure5_vasp_validation.png",
-            ROOT / "overleaf/images/figure2_vasp_validation.png",
+            ROOT / "research/paper_plots/figure2/figure2_vasp_validation.png",
         ],
     )
     plt.close(fig)
@@ -458,8 +457,7 @@ def regenerate_aa20_ablation() -> None:
     save_all(
         fig,
         [
-            ROOT / "research/paper_plots/figure2/figure2_combined_panelabc.png",
-            ROOT / "overleaf/images/figure3_combined_panelabc.png",
+            ROOT / "research/paper_plots/figure3/figure3_combined_panelabc.png",
         ],
     )
     plt.close(fig)

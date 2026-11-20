@@ -49,8 +49,6 @@ machine-specific recovery notes are intentionally excluded from the public
 repository. Keep reproducibility metadata in manifests, frozen configs, scripts,
 and `research/results/README.md`.
 
-The GitHub repository should keep only curated paper-facing CSV/JSON/TEX files
-under `research/results/`. Raw per-run payloads, complete logs, generated
-trajectories, and bulky generated structures should be staged into
-`adsmind-paper-artifacts-v0.1.0.zip` using the layout in
-`paper-artifacts/MANIFEST.md` and attached to the matching GitHub release.
+The GitHub repository keeps curated paper-facing CSV/JSON/TEX files under
+`research/results/`; raw per-run payloads, complete logs, generated trajectories,
+and bulky generated structures are not included.

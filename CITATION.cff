@@ -22,8 +22,8 @@ authors:
     given-names: Lixue
   - family-names: Schwaller
     given-names: Philippe
-repository-code: "https://github.com/NagatoBigSeven/AdsMind"
-url: "https://github.com/NagatoBigSeven/AdsMind"
+repository-code: "https://github.com/AI4QC/AdsMind"
+url: "https://github.com/AI4QC/AdsMind"
 license: MIT
 version: "0.1.0"
 keywords:

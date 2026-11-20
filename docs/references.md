@@ -10,7 +10,7 @@ Manuscript BibTeX entry:
   author = {Zhang, Zongmin and Lou, Yuyang and Zhang, Bowen and Chen, Junwu and Kuroki, Ryo and Nguyen, Xuan Vu and Fako, Edvin and Cheng, Lixue and Schwaller, Philippe},
   year = {2026},
   note = {Manuscript dated June 17, 2026},
-  url = {https://github.com/NagatoBigSeven/AdsMind},
+  url = {https://github.com/AI4QC/AdsMind},
 }
 ```
 

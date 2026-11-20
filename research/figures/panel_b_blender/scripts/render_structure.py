@@ -66,7 +66,7 @@ RADIUS_SCALE = 0.85
 
 # Hydrogen reads as invisible-white on a white BG; bright center + thick dark rim
 # pops against any backdrop (white BG OR grey/dark metal neighbors).
-# (Advisor 2026-04-29 PM: "可以让H原子的球的边框加重". v5 used mid-grey center which
+# (Advisor 2026-04-29 PM: "make the outlines of the hydrogen spheres heavier". v5 used mid-grey center which
 # clashed with steel-grey Pd in Mo3Pd case; v6 bright center + stronger rim fixes this.)
 H_DISPLAY_RADIUS = 0.55  # Å, larger than covalent so it reads in the figure
 H_DISPLAY_COLOR = "#F0F0F0"  # near-white center — pops on any background
@@ -114,7 +114,7 @@ def wipe_scene() -> None:
 
 def _principled_bsdf(mat: bpy.types.Material):
     """Find the Principled BSDF node by type — locale-agnostic
-    (Blender's GUI may localize node names, e.g. 'Principled BSDF' → '原理化 BSDF')."""
+    (Blender's GUI may display localized node names)."""
     return next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
 
 

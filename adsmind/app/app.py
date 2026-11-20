@@ -465,5 +465,5 @@ st.sidebar.caption(
     "⚠️ **Disclaimer**: AdsMind is an AI-assisted screening tool. "
     "Results should be validated with DFT or experimental methods before publication. "
     "Energy values are computed at 0K without thermal/entropic corrections. "
-    "See [documentation](https://github.com/NagatoBigSeven/AdsMind/blob/main/docs/quickstart.md) for details."
+    "See [documentation](https://github.com/AI4QC/AdsMind/blob/main/docs/quickstart.md) for details."
 )
